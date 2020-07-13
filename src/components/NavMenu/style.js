@@ -15,11 +15,14 @@ export const LeftSide = styled.div`
 
 export const Title = styled.h1`
   margin: 0;
+  color: ${props => props.mainText};
 `;
 
 export const Subtitle = styled.p`
   margin: 0;
   font-size: 14px;
+  color: ${props => props.secondaryText};
+  font-weight: bold;
 `;
 
 export const RightSide = styled.div`
@@ -30,7 +33,7 @@ export const RightSide = styled.div`
 export const Switch = styled.label`
   position: relative;
   display: inline-block;
-  width: 52px;
+  width: 44px;
   height: 22px;
   margin-left: 10px;
 `;
@@ -39,17 +42,11 @@ export const Input = styled.input`
   opacity: 0;
   width: 0;
   height: 0;
-  &:checked + span {
-    background-color: #2196F3;
-  };
   &:checked + span::before {
-    -webkit-transform: translateX(30px);
-    -ms-transform: translateX(30px);
-    transform: translateX(30px);
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
   };
-  &:focus + span {
-    box-shadow: 0 0 1px #2196F3;
-  }
 `;
 
 export const Slider = styled.span`
@@ -59,7 +56,8 @@ export const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-image: ${props => props.sliderColor};
+  background-color: ${props => props.sliderColor};
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;
@@ -70,7 +68,7 @@ export const Slider = styled.span`
     width: 14px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: ${props => props.toggle};
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
